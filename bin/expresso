@@ -522,6 +522,9 @@ function run(files, dir) {
                 ++failed;
                 process.exit(1);
             }
+            files = files.filter(function(element, index, array) {
+                return element.match(/\.js$/);
+            });
             run(files, 'test/');
         });
     }
